@@ -1,0 +1,229 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 1. Very important for mobile scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdul Rahim Sama Ngufor – CV</title>
+  
+  <!-- Montserrat font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark-bg: #2d3e50;
+      --teal:   #2aaab1;
+      --light:  #f5f7fa;
+      --text:   #333;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;              /* 2. Ensure body fills full height */
+      width: 100%;
+      background: var(--light);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* 3. Zero-out print margins so PDF truly fills page */
+    @page {
+      size: auto;
+      margin: 0;
+    }
+
+    /* Print tweaks */
+    @media print {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      .cv {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+
+    /* 4. Main CV grid always at least full viewport height */
+    .cv {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      max-width: 900px;
+      min-height: 100vh;         /* fill vertical space */
+      margin: auto;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* === SIDEBAR === */
+    .sidebar {
+      background: var(--dark-bg);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--teal);
+      margin-bottom: 15px;
+    }
+    .sidebar h1 {
+      font-size: 1.8em;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .sidebar p.summary {
+      font-size: 0.95em;
+      font-weight: 300;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .sidebar .contact p {
+      font-size: 0.9em;
+      margin: 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sidebar .contact p i {
+      margin-right: 8px;
+      color: var(--teal);
+    }
+
+    /* Teal accent line under sidebar */
+    .cv::before {
+      content: '';
+      grid-column: 1 / -1;
+      height: 6px;
+      background: var(--teal);
+    }
+
+    /* === MAIN CONTENT === */
+    .main {
+      padding: 30px 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      font-size: 1.1em;
+      font-weight: 500;
+      color: var(--dark-bg);
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--teal);
+    }
+    .section p, .section li {
+      font-size: 0.9em;
+      margin-bottom: 6px;
+    }
+    .section ul {
+      padding-left: 18px;
+    }
+    .section ul li {
+      list-style: disc;
+    }
+
+    /* === Responsive: stack on narrow screens === */
+    @media (max-width: 700px) {
+      .cv {
+        grid-template-columns: 1fr;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+    }
+  </style>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="cv">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <img src="photo.jpg" alt="Abdul Rahim Sama Ngufor">
+      <h1>Abdul Rahim Sama Ngufor</h1>
+      <p class="summary">
+        Aspiring Civil Engineer with a passion for architectural and structural design.
+        Currently interning at Edge Construction Company in Bamenda, Cameroon.
+      </p>
+      <div class="contact">
+        <p><i class="fas fa-envelope"></i> abdusam237@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +237 670 433 429</p>
+        <p><i class="fas fa-map-marker-alt"></i> Bamenda, Cameroon</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+      <!-- Left Col: Education & Experience -->
+      <div>
+        <div class="section">
+          <h2>Education</h2>
+          <p><strong>GCE ATVE</strong><br>GTHS Bamenda (2022 – 2023)</p>
+          <p><strong>GCE ITVE</strong><br>GTHS Molyko (2020 – 2021)</p>
+        </div>
+        <div class="section">
+          <h2>Experience</h2>
+          <p><strong>Intern – Civil Engineering</strong><br>
+             Edge Construction Company, Bamenda (2023 – 2025)
+          </p>
+          <ul>
+            <li>Drafted and reviewed construction plans</li>
+            <li>Participated in site supervision and coordination</li>
+            <li>Supported architectural design and AutoCAD tasks</li>
+            <li>Collaborated on structural layout planning</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Col: Skills, Certificates, Languages -->
+      <div>
+        <div class="section">
+          <h2>Technical Skills</h2>
+          <ul>
+            <li>AutoCAD Drawing</li>
+            <li>Website Design</li>
+            <li>Architectural Design</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h2>Certificates</h2>
+          <ul>
+            <li>GCE ATVE</li>
+            <li>GCE ITVE</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h2>Languages</h2>
+          <ul>
+            <li>English – Native Proficiency</li>
+            <li>French – Professional Proficiency</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
